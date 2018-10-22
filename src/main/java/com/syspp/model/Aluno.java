@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Aluno extends AbstractEntity{
@@ -13,10 +13,21 @@ public class Aluno extends AbstractEntity{
 	
 	private String matricula;
 	
-	@OneToMany(cascade = { CascadeType.ALL}, orphanRemoval =  true, mappedBy = "aluno")
+	private String email;
+	
+	@ManyToMany(cascade = { CascadeType.ALL})
 	private List<Materia> materias;
 	
 	private String password;
+	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public String getNome() {
 		return nome;

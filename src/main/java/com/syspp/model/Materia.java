@@ -1,7 +1,6 @@
 package com.syspp.model;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Materia extends AbstractEntity {
@@ -10,12 +9,46 @@ public class Materia extends AbstractEntity {
 	
 	private Integer CargaHoraria;
 
-	@ManyToOne
-	private Aluno aluno;
+	private String turno;
 	
-	@ManyToOne
-	private Professor professor;
+	private String professor;
 	
+	private String sigla;
+	
+	private Dia dia;
+	
+	public Dia getDia() {
+		return dia;
+	}
+
+	public void setDia(Dia dia) {
+		this.dia = dia;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
+	}
+
+	public String getSigla() {
+		return sigla;
+	}
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+
+	public String getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(String professor) {
+		this.professor = professor;
+	}
+
 	public String getNome() {
 		return nome;
 	}
